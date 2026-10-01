@@ -12,7 +12,7 @@
     <main class="container">
         <h1>{{ keyword }} 잡서치결과</h1>
         <div>
-            <a href="/file?keyword={{keword}}">
+            <a href="/file?keyword={{keyword}}">
                 <button>CSV다운로드</button>
 
             </a>
@@ -20,6 +20,7 @@
         <table>
             <tr>
                 <td>No</td>
+                <td>사이트</td>
                 <td>회사</td>
                 <td>공고제목</td>
                 <td>위치</td>
@@ -28,6 +29,7 @@
             {% for index, job in jobs %}
             <tr>
                 <td>{{ index + 1 }}</td>
+                <td>{{ job.get("site", "인크루트") }}</td>
                 <td>{{ job["company"] }}</td>
                 <td>{{ job["title"] }}
                 </td>
